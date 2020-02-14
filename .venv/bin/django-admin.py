@@ -1,4 +1,4 @@
-#!/var/www/html/dofus/.venv/bin/python
+#!/home/mael/development/dofus/.venv/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
