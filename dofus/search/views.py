@@ -34,6 +34,28 @@ def get_players(request):
     return HttpResponse(template.render(context, request))
 
 @login_required(login_url='/login')
+def get_players_user(request):
+
+    template = loader.get_template("search/players.html")
+    players = Player.objects.filter(user=request.user)
+    form = PlayerForm()
+    if request.method == 'POST':
+        form = PlayerForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            players = Player.objects.filter(
+                user=request.user,
+                level__gte=form.cleaned_data['lvlmin'],
+                level__lte=form.cleaned_data['lvlmax'],
+                DofusClasse=form.cleaned_data['dofusClass'],
+                server=form.cleaned_data['server'],
+                pvpm=form.cleaned_data['pvpm'],
+                )
+    
+    context = {'form': form, 'players' : players}
+    return HttpResponse(template.render(context, request))
+
+@login_required(login_url='/login')
 def get_guilds(request):
 
     template = loader.get_template("search/guilds.html")
