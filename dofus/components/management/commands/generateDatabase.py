@@ -65,3 +65,377 @@ class Command(BaseCommand):
         p.pvpm = "pvp"
         p.dbook = "toto1"
         p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p1"
+        p.level = 80
+        p.classe = "class1"
+        p.description = "desc1"
+        p.pvpm = "pvp"
+        p.dbook = "toto"
+        p.save()
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p2"
+        p.level = 80
+        p.classe = "class2"
+        p.description = "desc2"
+        p.pvpm = "pvp"
+        p.dbook = "toto3"
+        p.save()
+
+
+        p = Player()
+        p.server = s
+        p.guild = g
+        p.name = "p3"
+        p.level = 80
+        p.classe = "class3"
+        p.description = "desc3"
+        p.pvpm = "pvp"
+        p.dbook = "toto1"
+        p.save()
