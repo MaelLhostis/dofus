@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.template import loader
 
+from home.models import Player
+
 
 
 def index(request):
@@ -8,10 +10,31 @@ def index(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-def players(request):
+def players_all(request):
     template = loader.get_template("search/players.html")
-    context = {'array' : [1,2,3,4,5,6]}
+    players = Player.objects.all()
+    context = {'players' : players}
+    print("1")
     return HttpResponse(template.render(context, request))
+
+def players_level(request, levelMin, levelMax):
+    template = loader.get_template("search/players.html")
+    players = Player.objects.filter(level__gte=levelMin, level__lte=levelMax)
+    context = {'players' : players}
+    return HttpResponse(template.render(context, request))
+
+def players_pvpm(request, pvpm):
+    template = loader.get_template("search/players.html")
+    players = Player.objects.filter(pvpm=pvpm)
+    context = {'players' : players}
+    return HttpResponse(template.render(context, request))
+
+def players_classe(request, classe):
+    template = loader.get_template("search/players.html")
+    players = Player.objects.filter(classe=classe)
+    context = {'players' : players}
+    return HttpResponse(template.render(context, request))
+
 
 def guilds(request):
     template = loader.get_template("search/guilds.html")
