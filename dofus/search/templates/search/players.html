@@ -14,6 +14,11 @@
 
     }
 </style>
+<form action="/search/get_players" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
 
 <div class="container">
     {% for player in players %}
