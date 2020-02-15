@@ -1,15 +1,17 @@
 {% include "search/index.html" %}
 
 <style>
-    .container{
+    .contain{
         display: flex;
         align-items: stretch;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        padding: 10px 10% 10px 10%;
+        width: 100%;
     }
 
     .card{
-        width: 200px;
+        width: 300px;
         margin-bottom: 50px;
 
     }
@@ -20,7 +22,7 @@
     <input type="submit" value="Submit">
 </form>
 
-<div class="container">
+<div class="contain">
     {% for player in players %}
         <div class="card">
             <div class="card-header">
@@ -29,10 +31,12 @@
                 </h3>
             </div>
             <div class="card-body">
-                <p>{{ player.level }}</p>
-                <p>{{ player.classe }}</p>
-                <p>{{ player.pvpm }}</p>
-                <p>{{ player.dbook }}</p>
+                <p>Level : {{ player.level }}</p>
+                <p>Classe : {{ player.DofusClasse }}</p>
+                <p>Gameplay : {{ player.pvpm }}</p>
+                <p>DBook : {{ player.dbook }}</p>
+                <p>Serveur : {{ player.server }}</p>
+                <hr>
                 <p>{{ player.description }}</p>
             </div>
         </div>

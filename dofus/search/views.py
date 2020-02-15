@@ -28,12 +28,17 @@ def get_players(request):
     template = loader.get_template("search/players.html")
     players = Player.objects.all()
     form = PlayerForm()
-    
-
     if request.method == 'POST':
         form = PlayerForm(request.POST)
         if form.is_valid():
-            players = Player.objects.filter(level__gte=form.cleaned_data['lvlmin'], level__lte=form.cleaned_data['lvlmax'])
+            print(form.cleaned_data)
+            players = Player.objects.filter(
+                level__gte=form.cleaned_data['lvlmin'],
+                level__lte=form.cleaned_data['lvlmax'],
+                DofusClasse=form.cleaned_data['dofusClass'],
+                server=form.cleaned_data['server'],
+                pvpm=form.cleaned_data['pvpm'],
+                )
     
     context = {'form': form, 'players' : players}
     return HttpResponse(template.render(context, request))
