@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 import enum
 
@@ -40,13 +41,8 @@ class Pvpm(enum.Enum):
     PVM = "PVM"
     PVPM = "PVP/PVM"
 
-class User(models.Model):
-    mail = models.CharField(max_length=250)
-    username = models.CharField(max_length=250)
-    password = models.CharField(max_length=250)
-
-
 class Alliance(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     server = models.CharField(max_length=250)
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=550)
@@ -54,8 +50,9 @@ class Alliance(models.Model):
     lvlMinRecrutement = models.IntegerField()
 
 class Guild(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     server =  models.CharField(max_length=250)
-    alliance = models.ForeignKey(Alliance, on_delete=models.CASCADE)
+    alliance = models.ForeignKey(Alliance, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=550)
     recrutement = models.BooleanField()
@@ -63,8 +60,9 @@ class Guild(models.Model):
     pvpm = models.CharField(max_length=50)
 
 class Player(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     server =  models.CharField(max_length=250)
-    guild = models.ForeignKey(Guild, on_delete=models.CASCADE)
+    guild = models.ForeignKey(Guild, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=250)
     level = models.IntegerField()
     DofusClasse = models.CharField(max_length=250)
@@ -73,6 +71,7 @@ class Player(models.Model):
     dbook = models.CharField(max_length=250)
 
 class Article(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=250)
     articleContent = models.CharField(max_length=1000)
     articleDate = models.DateField()

@@ -1,0 +1,7 @@
+<form action="/login/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+<a href="/login/subscribe">S'enregistrer</a>
+<p style="color: red">{{ error }}</p>
