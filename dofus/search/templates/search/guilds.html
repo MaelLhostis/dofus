@@ -1,3 +1,49 @@
 {% include "search/index.html" %}
 
-guilds work
+<style>
+    .contain{
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 10px 10% 10px 10%;
+        width: 100%;
+    }
+
+    .card{
+        width: 300px;
+        margin-bottom: 50px;
+
+    }
+</style>
+<form action="/search/get_guilds" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+<div class="contain">
+    {% for guild in guilds %}
+        <div class="card">
+            <div class="card-header">
+                <h3>
+                    {{guild.name}}
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>Gameplay : {{ guild.pvpm }}</p>
+                <p>alliance : {{ guild.alliance.name }}</p>
+                <p>Serveur : {{ guild.server }}</p>
+                <p>Recrutement :
+                    {% if guild.recrutement %}
+                    oui
+                    {% else %}
+                    non
+                    {% endif %}
+                </p>
+                <hr>
+                <p>{{ guild.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>

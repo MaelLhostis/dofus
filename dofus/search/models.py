@@ -14,3 +14,22 @@ class PlayerForm(forms.Form):
     dofusClass = forms.ChoiceField(choices = classChoices)
     server = forms.ChoiceField(choices = serverChoices)
     pvpm = forms.ChoiceField(choices = pvpmChoices)
+
+class GuildForm(forms.Form):
+
+    serverChoices = [(key.value, key.value) for key in Server]
+    pvpmChoices = [(key.value, key.value) for key in Pvpm]
+
+    server = forms.ChoiceField(choices = serverChoices)
+    pvpm = forms.ChoiceField(choices = pvpmChoices)
+    recrutement = forms.BooleanField()
+    lvlmin = forms.IntegerField(label='lvlmin')
+
+class AllianceForm(forms.Form):
+
+    serverChoices = [(key.value, key.value) for key in Server]
+    pvpmChoices = [(key.value, key.value) for key in Pvpm]
+
+    server = forms.ChoiceField(choices = serverChoices)
+    recrutement = forms.BooleanField()
+    lvlmin = forms.IntegerField(label='lvlmin')

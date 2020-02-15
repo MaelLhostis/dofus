@@ -71,3 +71,9 @@ class Player(models.Model):
     description = models.CharField(max_length=550)
     pvpm = models.CharField(max_length=250)
     dbook = models.CharField(max_length=250)
+
+class Article(models.Model):
+    title = models.CharField(max_length=250)
+    articleContent = models.CharField(max_length=1000)
+    articleDate = models.DateField()
+    

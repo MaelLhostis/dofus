@@ -2,8 +2,8 @@ from django.http import HttpResponse
 from django.template import loader
 from django import forms
 
-from home.models import Player
-from .models import PlayerForm
+from home.models import Player, Guild, Alliance
+from .models import PlayerForm, GuildForm, AllianceForm
 
 
 
@@ -42,6 +42,44 @@ def get_players(request):
     
     context = {'form': form, 'players' : players}
     return HttpResponse(template.render(context, request))
+
+def get_guilds(request):
+
+    template = loader.get_template("search/guilds.html")
+    guilds = Guild.objects.all()
+    form = GuildForm()
+    if request.method == 'POST':
+        form = GuildForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            guilds = Guild.objects.filter(
+                lvlMinRecrutement__gte=form.cleaned_data['lvlmin'],
+                server=form.cleaned_data['server'],
+                pvpm=form.cleaned_data['pvpm'],
+                recrutement=form.cleaned_data['recrutement'] 
+                )
+
+    context = {'form': form, 'guilds' : guilds}
+    return HttpResponse(template.render(context, request))
+ 
+def get_alliances(request):
+
+    template = loader.get_template("search/alliances.html")
+    alliances = Alliance.objects.all()
+    form = AllianceForm()
+    if request.method == 'POST':
+        form = AllianceForm(request.POST)
+        if form.is_valid():   
+            print(form.cleaned_data)
+            alliances = Alliance.objects.filter(
+                lvlMinRecrutement__gte=form.cleaned_data['lvlmin'],
+                server=form.cleaned_data['server'],
+                recrutement=form.cleaned_data['recrutement']
+                )
+    
+    context = {'form': form, 'alliances' : alliances}
+    return HttpResponse(template.render(context, request))
+
 
 
 def players_all(request):
