@@ -1,6 +1,7 @@
 from django.db import models
+import enum
 
-class Server(models.Model):
+class Server(enum.Enum):
     AGRIDE = "Agride"
     ILYZAELLE = "Illyzaelle"
     USH = "Ush"
@@ -14,7 +15,7 @@ class Server(models.Model):
     OTOMUSTAN = "Oto Mustam"
     OMBRE = "Ombre"
 
-class DofusClass(models.Model):
+class DofusClass(enum.Enum):
     CRA = "Cra"
     ECAFLIP = "Ecaflip"
     ENIRIPSA = "Eniripsa"
@@ -34,39 +35,39 @@ class DofusClass(models.Model):
     HUPPERMAGE = "Hupermage"
     OUGINAK = "Ouginak"
 
-class Pvpm(models.Model):
+class Pvpm(enum.Enum):
     PVP = "PVP"
     PVM = "PVM"
     PVPM = "PVP/PVM"
 
 class User(models.Model):
-    mail = models.CharField(max_length=30)
-    username = models.CharField(max_length=30)
-    password = models.CharField(max_length=30)
+    mail = models.CharField(max_length=250)
+    username = models.CharField(max_length=250)
+    password = models.CharField(max_length=250)
 
 
 class Alliance(models.Model):
-    server = models.CharField(max_length=30)
-    name = models.CharField(max_length=30)
+    server = models.CharField(max_length=250)
+    name = models.CharField(max_length=250)
     description = models.CharField(max_length=550)
     recrutement = models.BooleanField()
     lvlMinRecrutement = models.IntegerField()
 
 class Guild(models.Model):
-    server =  models.CharField(max_length=30)
+    server =  models.CharField(max_length=250)
     alliance = models.ForeignKey(Alliance, on_delete=models.CASCADE)
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=250)
     description = models.CharField(max_length=550)
     recrutement = models.BooleanField()
     lvlMinRecrutement = models.IntegerField()
     pvpm = models.CharField(max_length=50)
 
 class Player(models.Model):
-    server =  models.CharField(max_length=30)
+    server =  models.CharField(max_length=250)
     guild = models.ForeignKey(Guild, on_delete=models.CASCADE)
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=250)
     level = models.IntegerField()
-    DofusClasse = models.CharField(max_length=15)
+    DofusClasse = models.CharField(max_length=250)
     description = models.CharField(max_length=550)
-    pvpm = models.CharField(max_length=50)
-    dbook = models.CharField(max_length=40)
+    pvpm = models.CharField(max_length=250)
+    dbook = models.CharField(max_length=250)
