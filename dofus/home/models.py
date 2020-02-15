@@ -28,10 +28,41 @@ class Player(models.Model):
     guild = models.ForeignKey(Guild, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     level = models.IntegerField()
-    classe = models.CharField(max_length=15)
+    DofusClasse = models.CharField(max_length=15)
     description = models.CharField(max_length=550)
     pvpm = models.CharField(max_length=3)
     dbook = models.CharField(max_length=40)
 
+class DofusClass(models.Model):
+    CRA = "Cra"
+    ECAFLIP = "Ecaflip"
+    ENIRIPSA = "Eniripsa"
+    IOP = "Iop"
+    FECA = "Féca"
+    SACRIEUR = "Sacrieur"
+    SADIDA = "Sadida"
+    OSAMODAS = "Osamodas"
+    ENUTROF = "Enutrof"
+    SRAM = "Sram"
+    XELOR = "Xelor"
+    PANDAWA = "Pandawa"
+    ROUBLARD ="Roublard"
+    ZOBAL = "Zobal"
+    STEAMER = "Steamer"
+    ELIOTROPE = "Eliotrope"
+    HUPPERMAGE = "Hupermage"
+    OUGINAK = "Ouginak"
 
-
+class Server(models.Model):
+    AGRIDE = "Agride"
+    ILYZAELLE = "Illyzaelle"
+    USH = "Ush"
+    MERIANA = "Mériana"
+    PANDORE = "Pandore"
+    NIDAS = "Nidas"
+    MERKATOR = "Merkator"
+    BRUMEN = "Brumen"
+    JULITH = "Julith"
+    FURYE = "Furye"
+    OTOMUSTAN = "Oto Mustam"
+    OMBRE = "Ombre"
