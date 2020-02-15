@@ -9,27 +9,27 @@ class Server(models.Model):
     name = models.CharField(max_length=30)
 
 class Alliance(models.Model):
-    idServer = models.ForeignKey(Server, on_delete=models.CASCADE)
+    server = models.ForeignKey(Server, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
-    descrip = models.CharField(max_length=550)
+    description = models.CharField(max_length=550)
     recrutement = models.BooleanField()
     lvlMinRecrutement = models.IntegerField()
 
 class Guild(models.Model):
-    idServer = models.ForeignKey(Server, on_delete=models.CASCADE)
-    idAlliance = models.ForeignKey(Alliance, on_delete=models.CASCADE)
+    server = models.ForeignKey(Server, on_delete=models.CASCADE)
+    alliance = models.ForeignKey(Alliance, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
-    descrip = models.CharField(max_length=550)
+    description = models.CharField(max_length=550)
     recrutement = models.BooleanField()
     lvlMinRecrutement = models.IntegerField()
 
-class Perso(models.Model):
-    idServeur = models.ForeignKey(Server, on_delete=models.CASCADE)
-    idGuild = models.ForeignKey(Guild, on_delete=models.CASCADE)
+class Player(models.Model):
+    server = models.ForeignKey(Server, on_delete=models.CASCADE)
+    guild = models.ForeignKey(Guild, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     level = models.IntegerField()
     classe = models.CharField(max_length=15)
-    descrip = models.CharField(max_length=550)
+    description = models.CharField(max_length=550)
     pvpm = models.CharField(max_length=3)
     dbook = models.CharField(max_length=40)
 
