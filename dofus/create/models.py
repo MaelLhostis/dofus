@@ -10,12 +10,12 @@ class PlayerForm(forms.Form):
     pvpmChoices = [(key.value, key.value) for key in Pvpm]
 
     server = forms.ChoiceField(choices = serverChoices)
-    name = forms.CharField(label='name')
-    level = forms.IntegerField(label='level')
-    dofusClasse = forms.ChoiceField(choices = classChoices)
-    description = forms.CharField(label='description')
+    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'placeholder': 'Entrez votre nom'}))
+    level = forms.IntegerField(label='level', widget=forms.TextInput(attrs={'placeholder': 'Entrez votre level'}), max_value=200)
+    dofusClasse = forms.ChoiceField(choices = classChoices, initial="default")
+    description = forms.CharField(label='description', widget=forms.TextInput(attrs={'placeholder': 'Entrez une description'}), max_length=550)
     pvpm = forms.ChoiceField(choices = pvpmChoices)
-    dbook = forms.CharField(label='dbook')
+    dbook = forms.CharField(label='dbook', widget=forms.TextInput(attrs={'placeholder': 'Entrez votre lien dbook'}))
 
 class GuildForm(forms.Form):
 
@@ -23,11 +23,11 @@ class GuildForm(forms.Form):
     pvpmChoices = [(key.value, key.value) for key in Pvpm]
 
     server = forms.ChoiceField(choices = serverChoices)
-    name = forms.CharField(label='name')
-    description = forms.CharField(label='description')
+    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'placeholder': 'Entrez un nom'}))
+    description = forms.CharField(label='description', widget=forms.TextInput(attrs={'placeholder': 'Entrez une description'}), max_length=550)
     pvpm = forms.ChoiceField(choices = pvpmChoices)
-    lvlMinRecrutement = forms.IntegerField(label='lvlMinRecrutement')
-    recrutement = forms.BooleanField(label='recrutement')
+    lvlMinRecrutement = forms.IntegerField(label='Level min de recrutement', widget=forms.TextInput(attrs={'placeholder': 'Entrez le level de recrutement'}), max_value=200)
+    recrutement = forms.BooleanField(label='recrutement', required=False)
 
 class AllianceForm(forms.Form):
 
@@ -35,8 +35,8 @@ class AllianceForm(forms.Form):
     pvpmChoices = [(key.value, key.value) for key in Pvpm]
 
     server = forms.ChoiceField(choices = serverChoices)
-    name = forms.CharField(label='name')
-    description = forms.CharField(label='description')
+    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'placeholder': 'Entrez un nom'}))
+    description = forms.CharField(label='description', widget=forms.TextInput(attrs={'placeholder': 'Entrez une description'}), max_length=550)
     pvpm = forms.ChoiceField(choices = pvpmChoices)
-    lvlMinRecrutement = forms.IntegerField(label='lvlMinRecrutement')
-    recrutement = forms.BooleanField(label='recrutement')
+    lvlMinRecrutement = forms.IntegerField(label='Level min de recrutement', widget=forms.TextInput(attrs={'placeholder': 'Entrez le level de recrutement'}), max_value=200)
+    recrutement = forms.BooleanField(label='recrutement', required=False)

@@ -29,7 +29,7 @@ def log_in(request):
 
 def log_out(request):
     logout(request)
-    return redirect('/login')
+    return redirect('/home')
 
 def subscribe(request):
     template = loader.get_template("login/subscribe.html")

@@ -1,25 +1,45 @@
-{% load static %}
-
-
-<script>
-    
-</script>
-
 {% include "components/header.html" %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light flex">
-    <div class="left">
-    </div>
-    <div class="center">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="/create/players">Joueurs</a>
-              <a class="nav-item nav-link" href="/create/guilds">Guildes</a>
-              <a class="nav-item nav-link" href="/create/alliances">Alliances</a>
-            </div>
-          </div>
-    </div>
-    <div class="right">
-  
-    </div>
-  </nav>
+<style>
+  .active{
+    background: #93A401;
+  }
+  .flex_container_header{
+    background-color: #6F691D;
+    padding: 0.4rem 0 0.4rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+  }
+  .flex_container_header a{
+    color: #ffffff;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5%;
+  }
+  .flex_container_header a:hover{
+    background: #B5C902;
+  }
+
+</style>
+
+<script>
+    $( document ).ready(function() {
+        if (window.location.href.includes('players')){
+            $('#players').addClass('active')
+        }
+        else if (window.location.href.includes('guilds')){
+            $('#guilds').addClass('active')
+        }
+        else if (window.location.href.includes('alliances')){
+            $('#alliances').addClass('active')
+        }
+        });
+</script>
+
+<div class="flex_container_header">
+    <a id="players" class="" href="/create/players">Joueurs</a>
+    <a id="guilds" class="" href="/create/guilds">Guildes</a>
+    <a id="alliances" class="" href="/create/alliances">Alliances</a>
+</div>

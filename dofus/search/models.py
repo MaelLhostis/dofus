@@ -5,31 +5,45 @@ from home.models import DofusClass, Server, Pvpm
 
 class PlayerForm(forms.Form):
 
-    classChoices = [(key.value, key.value) for key in DofusClass]
-    serverChoices = [(key.value, key.value) for key in Server]
-    pvpmChoices = [(key.value, key.value) for key in Pvpm]
+    classDefault = [(None, '------')]
+    classQuery = [(key.value, key.value) for key in DofusClass]
+    classChoices = classDefault + classQuery
+    serverDefault = [(None, '------')]
+    serverQuery = [(key.value, key.value) for key in Server]
+    serverChoices = serverDefault + serverQuery
+    pvpmDefault = [(None, '------')]
+    pvpmQuery = [(key.value, key.value) for key in Pvpm]
+    pvpmChoices = pvpmDefault + pvpmQuery
 
-    lvlmin = forms.IntegerField(label='lvlmin')
-    lvlmax = forms.IntegerField(label='lvlmax')
-    dofusClass = forms.ChoiceField(choices = classChoices)
-    server = forms.ChoiceField(choices = serverChoices)
-    pvpm = forms.ChoiceField(choices = pvpmChoices)
+    lvlmin = forms.IntegerField(label='lvlmin', required=False)
+    lvlmax = forms.IntegerField(label='lvlmax', required=False)
+    dofusClass = forms.ChoiceField(choices = classChoices, required=False)
+    server = forms.ChoiceField(choices = serverChoices, required=False)
+    pvpm = forms.ChoiceField(choices = pvpmChoices, required=False)
 
 class GuildForm(forms.Form):
 
-    serverChoices = [(key.value, key.value) for key in Server]
-    pvpmChoices = [(key.value, key.value) for key in Pvpm]
+    serverDefault = [(None, '------')]
+    serverQuery = [(key.value, key.value) for key in Server]
+    serverChoices = serverDefault + serverQuery
+    pvpmDefault = [(None, '------')]
+    pvpmQuery = [(key.value, key.value) for key in Pvpm]
+    pvpmChoices = pvpmDefault + pvpmQuery
 
-    server = forms.ChoiceField(choices = serverChoices)
-    pvpm = forms.ChoiceField(choices = pvpmChoices)
-    recrutement = forms.BooleanField()
-    lvlmin = forms.IntegerField(label='lvlmin')
+    server = forms.ChoiceField(choices = serverChoices, required=False)
+    pvpm = forms.ChoiceField(choices = pvpmChoices, required=False)
+    recrutement = forms.BooleanField(required=False)
+    lvlmin = forms.IntegerField(label='lvlmin', required=False)
 
 class AllianceForm(forms.Form):
 
-    serverChoices = [(key.value, key.value) for key in Server]
-    pvpmChoices = [(key.value, key.value) for key in Pvpm]
+    serverDefault = [(None, '------')]
+    serverQuery = [(key.value, key.value) for key in Server]
+    serverChoices = serverDefault + serverQuery
+    pvpmDefault = [(None, '------')]
+    pvpmQuery = [(key.value, key.value) for key in Pvpm]
+    pvpmChoices = pvpmDefault + pvpmQuery
 
-    server = forms.ChoiceField(choices = serverChoices)
-    recrutement = forms.BooleanField()
-    lvlmin = forms.IntegerField(label='lvlmin')
+    server = forms.ChoiceField(choices = serverChoices, required=False)
+    recrutement = forms.BooleanField(required=False)
+    lvlmin = forms.IntegerField(label='lvlmin', required=False)

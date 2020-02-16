@@ -1,7 +1,61 @@
 {% include "create/index.html" %}
 
-<form action="/create/players" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
+<style>
+        .flex_container{
+    display: flex;
+    justify-content: center;
+    }
+    .form_container{
+        width: 35%;
+        margin-top: 5%;
+
+    }
+    .add_form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    .add_form input, .form_container select {
+        height: 50px;
+        width: 100%;
+        margin: 15px 0 25px 0;
+        padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+        font-size: 1rem;
+        background-color: #595959;
+        border: 2px solid #93A401;
+        color: #ffffff;
+    }
+    .add_form input:focus, .form_container select:focus{
+        box-shadow: 0px 0px 5px #B5C902;
+    }
+    .add_form label {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 2rem;
+        margin-top: 10px;
+        color: #ffffff;
+
+    }
+    .add_form input[type='submit']{
+        width: 50%;
+        margin-left: 25%;
+        background-color: #93A401;
+    }
+    .add_form input[type='submit']:hover{
+        background-color: #B5C902;
+    }
+    .errorlist{
+        color: red;
+    }
+</style>
+<div class="flex_container">
+    <div class="left"></div>
+    <div class="form_container">
+        <form action="/create/players" method="post" class="add_form">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Créer un personnage">
+        </form>
+    </div>
+    <div class="right"></div>
+</div>

@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
 from home.models import Player, Guild, Alliance
@@ -8,18 +9,6 @@ from .models import PlayerForm, GuildForm, AllianceForm
 @login_required(login_url='/login')
 def index(request):
     template = loader.get_template("create/index.html")
-    context = {}
-    return HttpResponse(template.render(context, request))
-
-@login_required(login_url='/login')
-def guilds(request):
-    template = loader.get_template("create/guilds.html")
-    context = {}
-    return HttpResponse(template.render(context, request))
-
-@login_required(login_url='/login')
-def alliances(request):
-    template = loader.get_template("create/alliances.html")
     context = {}
     return HttpResponse(template.render(context, request))
 
@@ -40,7 +29,7 @@ def players(request):
             p.pvpm = form.cleaned_data['pvpm']
             p.dbook = form.cleaned_data['dbook']
             p.save()
-    
+            return redirect('/search/get_players')
     context = {'form': form}
     return HttpResponse(template.render(context, request))
 
@@ -60,7 +49,7 @@ def guilds(request):
             p.recrutement = form.cleaned_data['recrutement']
             p.lvlMinRecrutement = form.cleaned_data['lvlMinRecrutement']
             p.save()
-    
+            return redirect('/search/get_guilds')
     context = {'form': form}
     return HttpResponse(template.render(context, request))
 
@@ -79,6 +68,6 @@ def alliances(request):
             p.recrutement = form.cleaned_data['recrutement']
             p.lvlMinRecrutement = form.cleaned_data['lvlMinRecrutement']
             p.save()
-    
+            return redirect('/search/get_alliances')
     context = {'form': form}
     return HttpResponse(template.render(context, request))
