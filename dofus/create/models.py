@@ -16,3 +16,27 @@ class PlayerForm(forms.Form):
     description = forms.CharField(label='description')
     pvpm = forms.ChoiceField(choices = pvpmChoices)
     dbook = forms.CharField(label='dbook')
+
+class GuildForm(forms.Form):
+
+    serverChoices = [(key.value, key.value) for key in Server]
+    pvpmChoices = [(key.value, key.value) for key in Pvpm]
+
+    server = forms.ChoiceField(choices = serverChoices)
+    name = forms.CharField(label='name')
+    description = forms.CharField(label='description')
+    pvpm = forms.ChoiceField(choices = pvpmChoices)
+    lvlMinRecrutement = forms.IntegerField(label='lvlMinRecrutement')
+    recrutement = forms.BooleanField(label='recrutement')
+
+class AllianceForm(forms.Form):
+
+    serverChoices = [(key.value, key.value) for key in Server]
+    pvpmChoices = [(key.value, key.value) for key in Pvpm]
+
+    server = forms.ChoiceField(choices = serverChoices)
+    name = forms.CharField(label='name')
+    description = forms.CharField(label='description')
+    pvpm = forms.ChoiceField(choices = pvpmChoices)
+    lvlMinRecrutement = forms.IntegerField(label='lvlMinRecrutement')
+    recrutement = forms.BooleanField(label='recrutement')

@@ -1,3 +1,7 @@
 {% include "create/index.html" %}
 
-guild
+<form action="/create/guilds" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>

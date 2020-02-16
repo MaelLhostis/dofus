@@ -1,3 +1,7 @@
 {% include "create/index.html" %}
 
-alliance
+<form action="/create/alliances" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
