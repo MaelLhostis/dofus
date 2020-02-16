@@ -1,6 +1,45 @@
 {% include "search/index.html" %}
 
 <style>
+    .form_container{
+        height: 100px;
+        padding: 2rem 0 2rem 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+        color: #ffffff;
+    }
+    .form_container input, .form_container select {
+        height: 50px;
+        padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+        font-size: 1rem;
+        background-color: #595959;
+        border: 2px solid #93A401;
+        color: #ffffff;
+        outline: none;
+    }
+    .form_container input:focus, .form_container select:focus{
+        box-shadow: 0px 0px 5px #B5C902;
+        outline: none;
+    }
+    .form_container label {
+        font-size: 1rem;
+        margin-top: 10px;
+        color: #ffffff;
+
+    }
+    .form_container input[type='submit']{
+        background-color: #93A401;
+        border-radius: 5%;
+    }
+    .form_container input[type='submit']:hover{
+        background-color: #B5C902;
+    }
+    hr{
+        color: #93A401;
+        background-color: #93A401;
+    }
+
     .contain{
         display: flex;
         align-items: stretch;
@@ -13,29 +52,43 @@
     .card{
         width: 300px;
         margin-bottom: 50px;
+        border: 3px solid #93A401;
+        background-color: #595959;
+        color: #ffffff;
 
     }
+    .card-header{
+        font-family: 'Bebas Neue', cursive;
+        text-align: center;
+        padding: 0.5rem 0 0 0;
+    }
+    .card span{
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
 </style>
-<form action="/search/get_players" method="post">
+<form class="form_container" action="/search/get_players" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
 </form>
 
+<hr>
+
 <div class="contain">
     {% for player in players %}
         <div class="card">
             <div class="card-header">
-                <h3>
+                <h1>
                     {{player.name}}
-                </h3>
+                </h1>
             </div>
             <div class="card-body">
-                <p>Level : {{ player.level }}</p>
-                <p>Classe : {{ player.DofusClasse }}</p>
-                <p>Gameplay : {{ player.pvpm }}</p>
-                <p>DBook : {{ player.dbook }}</p>
-                <p>Serveur : {{ player.server }}</p>
+                <p><span>Level : </span>{{ player.level }}</p>
+                <p><span>Classe : </span>{{ player.DofusClasse }}</p>
+                <p><span>Gameplay : </span>{{ player.pvpm }}</p>
+                <p><span>DBook : </span>{{ player.dbook }}</p>
+                <p><span>Serveur : </span>{{ player.server }}</p>
                 <hr>
                 <p>{{ player.description }}</p>
             </div>

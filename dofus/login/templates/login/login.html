@@ -1,7 +1,78 @@
-<form action="/login/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
-<a href="/login/subscribe">S'enregistrer</a>
-<p style="color: red">{{ error }}</p>
+<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto&display=swap" rel="stylesheet"> 
+
+<style>
+
+    body, html{
+        background-color: #333333;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .flex_container{
+    display: flex;
+    justify-content: center;
+    }
+    .login_container{
+        width: 35%;
+        margin-top: 5%;
+
+    }
+    .login_form{
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        justify-content: center;
+        width: 100%;
+    }
+    .login_form input {
+        height: 50px;
+        width: 100%;
+        margin: 15px 0 25px 0;
+        padding: 1rem 0.5rem 1rem 0.5rem;
+        font-size: 1rem;
+        background-color: #595959;
+        border: 2px solid #93A401;
+        color: #ffffff;
+    }
+    .login_form input:focus{
+        box-shadow: 0px 0px 5px #B5C902;
+    }
+    .login_form label {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 2rem;
+        margin-top: 10px;
+        color: #ffffff;
+
+    }
+    .login_form input[type='submit']{
+        width: 50%;
+        margin-left: 25%;
+        background-color: #93A401;
+    }
+    .login_form input[type='submit']:hover{
+        background-color: #B5C902;
+    }
+    .error_text {
+        color: red;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+
+    }
+    .subscribe_text{
+        color: #93A401;
+    }
+</style>
+
+<div class="flex_container">
+    <div class="left"></div>
+    <div class="login_container">
+        <p class="error_text">{{ error }}</p>
+        <form action="/login/" method="post" class="login_form">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Se connecter">
+        </form>
+        <a class="subscribe_text"href="/login/subscribe">S'enregistrer</a>
+    </div>
+    <div class="right"></div>
+</div>

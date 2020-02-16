@@ -1,26 +1,45 @@
-{% load static %}
-
-<script>
-    
-</script>
-
-
 {% include "components/header.html" %}
 
+<style>
+  .active{
+    background: #93A401;
+  }
+  .flex_container{
+    background-color: #6F691D;
+    padding: 0.4rem 0 0.4rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+  }
+  .flex_container a{
+    color: #ffffff;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5%;
+  }
+  .flex_container a:hover{
+    background: #B5C902;
+  }
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light flex">
-  <div class="left">
-  </div>
-  <div class="center">
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/search/get_players">Joueurs</a>
-            <a class="nav-item nav-link" href="/search/get_guilds">Guildes</a>
-            <a class="nav-item nav-link" href="/search/get_alliances">Alliances</a>
-          </div>
-        </div>
-  </div>
-  <div class="right">
+</style>
 
-  </div>
-</nav>
+<script>
+    $( document ).ready(function() {
+        if (window.location.href.includes('get_players')){
+            $('#players').addClass('active')
+        }
+        else if (window.location.href.includes('get_guilds')){
+            $('#guilds').addClass('active')
+        }
+        else if (window.location.href.includes('get_alliances')){
+            $('#alliances').addClass('active')
+        }
+        });
+</script>
+
+<div class="flex_container">
+    <a id="players" class="" href="/search/get_players">Joueurs</a>
+    <a id="guilds" class="" href="/search/get_guilds">Guildes</a>
+    <a id="alliances" class="" href="/search/get_alliances">Alliances</a>
+</div>
