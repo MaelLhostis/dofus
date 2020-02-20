@@ -1,0 +1,22 @@
+<div class="info_container">
+    <div class="info_header">
+        <h3><b>Liste des alliances</b></h2>        
+    </div>
+    <div class="info_body">
+        <table class="table table-striped table-dark">
+                {% for alliance in gualliancesilds %}
+                <tr>
+                    <th scope="row">{{ alliance.name }}</th>
+                    <td class="DofusClasse">
+                        {% if alliance.recrutement %}
+                            <i class="fas fa-check"></i>Rectrute
+                        {% else %}
+                            <i class="fas fa-times"></i>Ne Recrute pas
+                        {% endif %}
+                    </td>
+                    <td class="level"><b>{{ alliance.lvlMinRecrutement }}</b></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>

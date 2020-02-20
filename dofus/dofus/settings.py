@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'components',
     'create',
     'login',
+    'profil',
+    'message',
 ]
 
 MIDDLEWARE = [

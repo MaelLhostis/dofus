@@ -1,0 +1,16 @@
+<div class="info_container">
+    <div class="info_header">
+        <h3><b>Liste des perso</b></h2>        
+    </div>
+    <div class="info_body">
+        <table class="table table-striped table-dark">
+            {% for player in players %}
+                <tr>
+                    <th scope="row">{{ player.name }}</th>
+                    <td class="DofusClasse"><img class="class_logo" src="../../static/images/sort_102.png" alt="classe">{{ player.DofusClasse }}</td>
+                    <td class="level"><b>{{ player.level }}</b></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>

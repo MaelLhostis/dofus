@@ -1,0 +1,85 @@
+{% include "components/header.html" %}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet"> 
+<style>
+  .page_container{
+    height: calc(100vh - 108px);
+  }
+  .profil_container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 55%;
+    justify-content: space-evenly;
+    padding-top: 50px;
+  }
+  .info_container{
+    width: 30%;
+    height: 100%;
+    border: 2px solid #93A401;
+  }
+  .info_header{
+      background: #565656;
+      color: #ffffff;
+      text-align: center;
+      vertical-align: center;
+      border-bottom: 2px solid #93A401;
+      height: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Open Sans Condensed', sans-serif;
+
+  }
+  .info_body{
+      height: 80%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+  .info_body ul{
+      margin: 0;
+      padding: 0;
+  }
+  .info_body table{
+      margin: 0;
+  }
+  .info_body th{ 
+      border-right: 1px solid #93A401;
+      width: 30%;
+  }
+  .DofusClasse{
+      padding-left: 20rem;
+  }
+  .level{
+      text-align: center;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 1.3rem;
+  }
+  .class_logo{
+      width: 30px;
+      margin: 0 1rem 0 1rem;
+  }
+  .fas{
+    margin-right: 15px
+  }
+  .fa-check{
+    color: rgb(174, 211, 42);
+  }
+  .fa-times{
+    color: rgb(228, 41, 41);
+  }
+  .messages_container{
+    width: 90%;
+    height: 38%;
+    border: 2px solid #93A401;
+    margin-left: 5%;
+    margin-top: 30px;
+  }
+</style>
+<div class="page_container">
+  <div class="profil_container">
+    {% include "profil/players.html" %}
+    {% include "profil/guilds.html" %}
+    {% include "profil/alliances.html" %}
+  </div>
+  {% include "profil/messages.html" %}
+</div>
