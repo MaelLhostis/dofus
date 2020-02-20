@@ -1,6 +1,27 @@
 <div class="messages_container">
     <div class="info_header">
-        <h3><b>Messagerie</b></h2>        
+        <h3><b>Messagerie</b><a href="/messaging"><i class="far fa-envelope"></i></a></h3>        
     </div>
-
+    <div class="message_sub_container">
+        <div class="info_body message_list">
+            <table class="table table-striped table-dark">
+                    {% for message in messages_send %}
+                    <tr>
+                        <th scope="row">{{ message.recever }}</th>
+                        <td class="DofusClasse">{{ message.message_text }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="info_body message_list">
+            <table class="table table-striped table-dark">
+                {% for message in messages_receved %}
+                <tr>
+                    <th scope="row">{{ message.sender }}</th>
+                    <td class="DofusClasse">{{ message.message_text }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
 </div>

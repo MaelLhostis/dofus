@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'create',
     'login',
     'profil',
-    'message',
+    'messaging',
 ]
 
 MIDDLEWARE = [

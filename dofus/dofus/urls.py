@@ -24,4 +24,5 @@ urlpatterns = [
     path('create/', include("create.urls")),
     path('login/', include("login.urls")),
     path('profil/', include("profil.urls")),
+    path('messaging/', include("messaging.urls")),
 ]
