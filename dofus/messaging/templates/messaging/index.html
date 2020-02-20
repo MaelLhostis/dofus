@@ -1,0 +1,7 @@
+{% include "components/header.html" %}
+
+<form action="/messaging/" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Créer une alliances">
+</form>
